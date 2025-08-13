@@ -7,7 +7,6 @@ import {
   Typography,
   IconButton,
   useMediaQuery,
-  Slide,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBar from "./components/SideBar";
@@ -56,15 +55,13 @@ export default function App() {
         <SideBar variant="permanent" open={true} onClose={() => { }} />
       )}
 
-      {/* Sidebar untuk tablet & mobile dengan animasi */}
+      {/* Sidebar untuk tablet & mobile */}
       {isTabletOrBelow && (
-        <Slide direction="right" in={mobileOpen} mountOnEnter unmountOnExit>
-          <SideBar
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-          />
-        </Slide>
+        <SideBar
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+        />
       )}
 
       {/* Main Content */}
@@ -80,8 +77,8 @@ export default function App() {
       >
         <Toolbar />
         <Typography paragraph>
-          Ini adalah area konten utama. Sidebar sekarang ada di file terpisah
-          `src/components/SideBar.jsx`.
+          Ini adalah area konten utama. Sidebar sekarang aman di tablet & mobile
+          tanpa error, dan sudah punya animasi smooth dari CSS.
         </Typography>
       </Box>
     </Box>

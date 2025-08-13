@@ -97,7 +97,7 @@ export default function SideBar({ variant, open, onClose }) {
                 "& .MuiDrawer-paper": {
                     width: drawerWidth,
                     boxSizing: "border-box",
-                    transition: "all 0.3s ease",
+                    transition: "transform 0.3s ease-in-out", // animasi smooth
                 },
             }}
         >
