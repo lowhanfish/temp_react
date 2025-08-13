@@ -1,7 +1,7 @@
 # temp_react
 
 **temp_react** is a default template for developing **Information Systems** with a **Backend (Node.js)** and **Frontend (React.js - Vite)** architecture.  
-This project is built using **Node.js v18.19.0** to ensure development environment consistency.
+This project is built using **Node.js v20.19.0** to ensure development environment consistency.
 
 ---
 
@@ -19,7 +19,7 @@ temp_react/
 
 ### Backend (`/server`)
 
-- **Node.js** v18.19.0
+- **Node.js** v20.19.0
 - Your preferred backend framework (Express.js, Koa, etc.)
 - REST API as a bridge between backend and frontend
 
@@ -35,11 +35,11 @@ temp_react/
 
 ### 1. Preparation
 
-Make sure **Node.js v18.19.0** is installed:
+Make sure **Node.js v20.19.0** is installed:
 
 ```bash
 node -v
-# Output: v18.19.0
+# Output: v20.19.0
 ```
 
 ### 2. Install Dependencies
@@ -84,7 +84,7 @@ The frontend will run on Vite's default port (default: `http://localhost:5173`).
 
 ## 📌 Notes
 
-- Use **Node.js v18.19.0** to avoid compatibility issues.
+- Use **Node.js v20.19.0** to avoid compatibility issues.
 - This template is meant as a starting point; feel free to expand it based on your project needs.
 - Ensure the environment variables (`.env`) are set properly in both **server** and **admin** directories.
 
