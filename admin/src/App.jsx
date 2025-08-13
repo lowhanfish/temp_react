@@ -6,6 +6,7 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  useTheme,
   useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -14,7 +15,10 @@ import SideBar from "./components/SideBar";
 const drawerWidth = 240;
 
 export default function App() {
-  const isTabletOrBelow = useMediaQuery("(max-width: 1024px)");
+  const theme = useTheme();
+  const isTabletOrBelow = useMediaQuery("(max-width:1024px)");
+  // "lg" default-nya 1200px di MUI
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -25,7 +29,7 @@ export default function App() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
 
-      {/* App Bar */}
+      {/* AppBar */}
       <AppBar
         position="fixed"
         sx={{
@@ -50,12 +54,12 @@ export default function App() {
         </Toolbar>
       </AppBar>
 
-      {/* Sidebar untuk desktop */}
+      {/* Sidebar Desktop */}
       {!isTabletOrBelow && (
         <SideBar variant="permanent" open={true} onClose={() => { }} />
       )}
 
-      {/* Sidebar untuk tablet & mobile */}
+      {/* Sidebar Tablet/Mobile */}
       {isTabletOrBelow && (
         <SideBar
           variant="temporary"
@@ -73,12 +77,17 @@ export default function App() {
           width: isTabletOrBelow
             ? "100%"
             : `calc(100% - ${drawerWidth}px)`,
+          ml: isTabletOrBelow ? 0 : `${drawerWidth}px`, // ✅ geser saat desktop
         }}
       >
         <Toolbar />
         <Typography paragraph>
           Ini adalah area konten utama. Sidebar sekarang aman di tablet & mobile
           tanpa error, dan sudah punya animasi smooth dari CSS.
+        </Typography>
+        <Typography paragraph>
+          Bagian ini sekarang tidak lagi tertutup oleh sidebar karena kita sudah
+          menambahkan margin kiri otomatis saat di desktop.
         </Typography>
       </Box>
     </Box>
