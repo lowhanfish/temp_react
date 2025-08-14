@@ -37,3 +37,15 @@ router.get('/', (req, res)=>{
 })
 
 
+
+router.post('/login', (req, res, next)=>{
+
+    const result = schema.validate({ username: req.body.username, password: req.body.password });
+    console.log(result);
+
+    res.send(result)
+
+
+})
+
+
