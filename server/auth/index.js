@@ -26,3 +26,13 @@ const schema = Joi.object({
     .max(12)
     .required(),
 })
+
+
+const respondError422 = (res, next, text)=>{
+res.status(422);
+    const error = new Error(text);
+    next(error);
+}
+
+
+
