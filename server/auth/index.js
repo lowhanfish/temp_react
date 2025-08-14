@@ -1,5 +1,28 @@
-const express = require('express');
-const Joi = require('joi');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-var uniqid = require('uniqid');
+import express from "express";
+import Joi from "joi";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import uniqid from "uniqid";
+
+
+import db from "../db/mysql/index.js";
+
+
+
+const router = express.Router();
+
+
+const schema = Joi.object({
+    username : Joi.string()
+    .pattern(new RegExp('/^[a-zA-Z0-9_]*$/'))
+    .alphanum()
+    .min(6)
+    .max(12)
+    .required(),
+    password : Joi.string()
+    .pattern(new RegExp('/^[a-zA-Z0-9_]*$/'))
+    .alphanum()
+    .min(6)
+    .max(12)
+    .required(),
+})

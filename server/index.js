@@ -2,6 +2,8 @@
 
 import express from "express";
 
+// import db from "./db/mysql/index.js";
+
 
 const app = express()
 const port = 3000
