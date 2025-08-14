@@ -82,12 +82,7 @@ export default function App() {
       >
         <Toolbar />
         <Typography paragraph>
-          Ini adalah area konten utama. Sidebar sekarang aman di tablet & mobile
-          tanpa error, dan sudah punya animasi smooth dari CSS.
-        </Typography>
-        <Typography paragraph>
-          Bagian ini sekarang tidak lagi tertutup oleh sidebar karena kita sudah
-          menambahkan margin kiri otomatis saat di desktop.
+          Bagian ini adalah tempat mengisi konten.
         </Typography>
       </Box>
     </Box>
