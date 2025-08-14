@@ -3,14 +3,9 @@ import Joi from "joi";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import uniqid from "uniqid";
-
-
 import db from "../db/mysql/index.js";
 
-
-
 const router = express.Router();
-
 
 const schema = Joi.object({
     username : Joi.string()
@@ -34,5 +29,11 @@ res.status(422);
     next(error);
 }
 
+
+router.get('/', (req, res)=>{
+    res.json({
+        message: 'login active'
+    });
+})
 
 
