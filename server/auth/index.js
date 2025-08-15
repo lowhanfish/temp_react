@@ -3,7 +3,7 @@ import Joi from "joi";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import uniqid from "uniqid";
-import db from "../db/mysql/index.js";
+import db from "../db/mysql/egov.js";
 
 const router = express.Router();
 
