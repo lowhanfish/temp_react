@@ -1,11 +1,9 @@
-import React from 'react'
+import { Typography } from "@mui/material";
 
-function Dashboard() {
+export default function Dashboard() {
     return (
-        <div>
-            <h1>Ini Dashboard</h1>
-        </div>
-    )
+        <Typography paragraph>
+            Ini adalah halaman Dashboard.
+        </Typography>
+    );
 }
-
-export default Dashboard
