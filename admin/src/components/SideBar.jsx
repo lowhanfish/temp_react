@@ -31,7 +31,20 @@ export default function SideBar({ variant, open, onClose }) {
 
     const drawerContent = (
         <Box sx={{ overflow: "auto" }}>
-            <Toolbar />
+
+            {/* <Toolbar /> */}
+
+            <Box sx={{ width: "100%" }}>
+                <img
+                    src="https://img.freepik.com/premium-vector/white-elegant-blue-background_662550-436.jpg"
+                    alt="Logo"
+                    style={{
+                        width: "100%",   // full lebar Drawer
+                        height: "auto",  // biar proporsional
+                        display: "block" // hilangin default spacing img
+                    }}
+                />
+            </Box>
             <List>
                 {/* Dashboard */}
                 <ListItemSatu disablePadding>
