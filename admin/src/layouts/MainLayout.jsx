@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import {
     Box,
     CssBaseline,
@@ -20,13 +20,11 @@ export default function MainLayout() {
     const theme = useTheme();
     const isTabletOrBelow = useMediaQuery("(max-width:1024px)");
 
-    // pisahkan state untuk desktop & mobile
     const [desktopOpen, setDesktopOpen] = useState(true);
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const toggleButtonRef = useRef(null);
 
-    // toggle drawer
     const handleDrawerToggle = () => {
         if (isTabletOrBelow) {
             setMobileOpen((prev) => !prev);
@@ -35,14 +33,34 @@ export default function MainLayout() {
         }
     };
 
-    // reset saat pindah mode
     useEffect(() => {
         if (isTabletOrBelow) {
-            setMobileOpen(false);     // mobile default: tertutup
+            setMobileOpen(false);
         } else {
-            setDesktopOpen(true);     // desktop default: terbuka
+            setDesktopOpen(true);
         }
     }, [isTabletOrBelow]);
+
+    // ambil path saat ini
+    const location = useLocation();
+
+    // konversi path ke judul
+    const getPageTitle = (pathname) => {
+        switch (pathname) {
+            case "/":
+            case "/dashboard":
+                return "Dashboard";
+            case "/profile":
+                return "Profile";
+            case "/settings":
+                return "Settings";
+            // tambahkan route lain sesuai kebutuhan
+            default:
+                return "";
+        }
+    };
+
+    const pageTitle = getPageTitle(location.pathname);
 
     return (
         <Box sx={{ display: "flex" }}>
@@ -77,7 +95,7 @@ export default function MainLayout() {
                             : <MenuIcon />}
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Dashboard
+                        {pageTitle}
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -88,9 +106,7 @@ export default function MainLayout() {
                     variant="temporary"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true,
-                    }}
+                    ModalProps={{ keepMounted: true }}
                 />
             ) : (
                 <SideBar
