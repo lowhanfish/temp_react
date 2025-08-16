@@ -1,13 +1,14 @@
-import React from 'react'
+import { Button, TextField, Box, Typography, Paper } from "@mui/material";
 
-function Login() {
+export default function Login() {
     return (
-        <div>
-            <h1>INI LOGIN</h1>
-        </div>
-    )
+        <Paper sx={{ p: 4, width: 300 }}>
+            <Typography variant="h6" mb={2}>Login</Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                <TextField label="Email" fullWidth />
+                <TextField label="Password" type="password" fullWidth />
+                <Button variant="contained">Login</Button>
+            </Box>
+        </Paper>
+    );
 }
-
-export default Login
-
-
