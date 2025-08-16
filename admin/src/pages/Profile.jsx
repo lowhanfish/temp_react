@@ -1,11 +1,9 @@
-import React from 'react'
+import { Typography } from "@mui/material";
 
-function Profile() {
+export default function Profile() {
     return (
-        <div>
-            <h1>Ini Profile</h1>
-        </div>
-    )
+        <Typography paragraph>
+            Ini adalah halaman Profile.
+        </Typography>
+    );
 }
-
-export default Profile
