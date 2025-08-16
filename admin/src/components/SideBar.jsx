@@ -68,9 +68,9 @@ export default function SideBar({ variant, open, onClose }) {
                 <Collapse in={openMenu} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }} onClick={handleSubMenuClick}>
-                            <ListItemIcon>
+                            {/* <ListItemIcon>
                                 <StarBorder />
-                            </ListItemIcon>
+                            </ListItemIcon> */}
                             <ListItemText primaryTypographyProps={stylex.sideBarText2} primary="User Management" />
                             {openSubMenu ? <ExpandLess /> : <ExpandMore />}
                         </ListItemButton>
