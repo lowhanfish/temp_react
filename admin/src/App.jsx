@@ -1,90 +1,30 @@
-import * as React from "react";
-import {
-  Box,
-  CssBaseline,
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import SideBar from "./components/SideBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
+// import Login from "./auth/Login.jsx";
+import Dashboard from "./pages/dashboard.jsx";
+import Profile from "./pages/profile.jsx";
 
-const drawerWidth = 240;
+import Login from "./auth/login.jsx";
 
-export default function App() {
-  const theme = useTheme();
-  const isTabletOrBelow = useMediaQuery("(max-width:1024px)");
-  // "lg" default-nya 1200px di MUI
 
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
+function App() {
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
+    <Router>
+      <Routes>
+        {/* Auth routes tanpa drawer */}
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
 
-      {/* AppBar */}
-      <AppBar
-        position="fixed"
-        sx={{
-          width: isTabletOrBelow ? "100%" : `calc(100% - ${drawerWidth}px)`,
-          ml: isTabletOrBelow ? 0 : `${drawerWidth}px`,
-        }}
-      >
-        <Toolbar>
-          {isTabletOrBelow && (
-            <IconButton
-              color="inherit"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-          <Typography variant="h6" noWrap>
-            Dashboard
-          </Typography>
-        </Toolbar>
-      </AppBar>
-
-      {/* Sidebar Desktop */}
-      {!isTabletOrBelow && (
-        <SideBar variant="permanent" open={true} onClose={() => { }} />
-      )}
-
-      {/* Sidebar Tablet/Mobile */}
-      {isTabletOrBelow && (
-        <SideBar
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-        />
-      )}
-
-      {/* Main Content */}
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: isTabletOrBelow
-            ? "100%"
-            : `calc(100% - ${drawerWidth}px)`,
-          ml: isTabletOrBelow ? 0 : `${drawerWidth}px`, // ✅ geser saat desktop
-        }}
-      >
-        <Toolbar />
-        <Typography paragraph>
-          Bagian ini adalah tempat mengisi konten.
-        </Typography>
-      </Box>
-    </Box>
+        {/* Pages routes dengan drawer */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
+
+export default App;

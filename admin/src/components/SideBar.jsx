@@ -18,7 +18,7 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
-import { ListItemSatu } from "../assets/styling/style.js";
+import { ListItemSatu, stylex } from "../assets/styling/style.js";
 
 const drawerWidth = 240;
 
@@ -39,7 +39,7 @@ export default function SideBar({ variant, open, onClose }) {
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
+                        <ListItemText primaryTypographyProps={stylex.sideBarText1} primary="Dashboard" />
                     </ListItemButton>
                 </ListItemSatu>
 
@@ -49,7 +49,7 @@ export default function SideBar({ variant, open, onClose }) {
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Profile" />
+                        <ListItemText primaryTypographyProps={stylex.sideBarText1} primary="Profile" />
                     </ListItemButton>
                 </ListItemSatu>
 
@@ -59,7 +59,7 @@ export default function SideBar({ variant, open, onClose }) {
                         <ListItemIcon>
                             <MailIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Master Data" />
+                        <ListItemText primaryTypographyProps={stylex.sideBarText1} primary="Master Data" />
                         {openMenu ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
                 </ListItemSatu>
@@ -71,7 +71,7 @@ export default function SideBar({ variant, open, onClose }) {
                             <ListItemIcon>
                                 <StarBorder />
                             </ListItemIcon>
-                            <ListItemText primary="User Management" />
+                            <ListItemText primaryTypographyProps={stylex.sideBarText2} primary="User Management" />
                             {openSubMenu ? <ExpandLess /> : <ExpandMore />}
                         </ListItemButton>
 
@@ -82,13 +82,13 @@ export default function SideBar({ variant, open, onClose }) {
                                     <ListItemIcon>
                                         <FiberManualRecordIcon sx={{ fontSize: 8 }} />
                                     </ListItemIcon>
-                                    <ListItemText primary="Add User" />
+                                    <ListItemText primaryTypographyProps={stylex.sideBarText3} primary="Add User" />
                                 </ListItemButton>
                                 <ListItemButton sx={{ pl: 8 }}>
                                     <ListItemIcon>
                                         <FiberManualRecordIcon sx={{ fontSize: 8 }} />
                                     </ListItemIcon>
-                                    <ListItemText primary="User List" />
+                                    <ListItemText primaryTypographyProps={stylex.sideBarText3} primary="User List" />
                                 </ListItemButton>
                             </List>
                         </Collapse>
@@ -102,7 +102,7 @@ export default function SideBar({ variant, open, onClose }) {
                             <InboxIcon />
                         </ListItemIcon>
                         <ListItemText
-                            primaryTypographyProps={{ fontSize: 12, fontWeight: "bold" }}
+                            primaryTypographyProps={stylex.sideBarText1}
                             primary="Logout"
                         />
                     </ListItemButton>
