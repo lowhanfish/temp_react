@@ -15,3 +15,8 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+app.post('/login', (req, res)=>{
+  res("activate end-point login auth")
+})

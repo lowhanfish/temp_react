@@ -1,0 +1,10 @@
+.sidebar-item {
+    padding: 0px 0px !important;
+    background-color: aqua;
+}
+
+.listItemText {
+    font-size: 10px !important;
+    margin-left: -20px;
+    font-weight: bold !important;
+}

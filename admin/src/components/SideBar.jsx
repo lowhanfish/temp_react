@@ -17,6 +17,8 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
+import { ListItemSatu } from "../assets/styling/style.js";
+
 const drawerWidth = 240;
 
 export default function SideBar({ variant, open, onClose }) {
@@ -31,17 +33,17 @@ export default function SideBar({ variant, open, onClose }) {
             <Toolbar />
             <List>
                 {/* Menu Biasa */}
-                <ListItem disablePadding>
+                <ListItemSatu disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
                         <ListItemText primary="Inbox" />
                     </ListItemButton>
-                </ListItem>
+                </ListItemSatu>
 
                 {/* Menu dengan sub-menu */}
-                <ListItem disablePadding>
+                <ListItemSatu className="sidebar-item">
                     <ListItemButton onClick={handleMenuClick}>
                         <ListItemIcon>
                             <MailIcon />
@@ -49,7 +51,7 @@ export default function SideBar({ variant, open, onClose }) {
                         <ListItemText primary="Master Data" />
                         {openMenu ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
-                </ListItem>
+                </ListItemSatu>
 
                 {/* Sub-menu */}
                 <Collapse in={openMenu} timeout="auto" unmountOnExit>
@@ -79,8 +81,18 @@ export default function SideBar({ variant, open, onClose }) {
                                 </ListItemButton>
                             </List>
                         </Collapse>
+
                     </List>
                 </Collapse>
+
+                <ListItemSatu>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primaryTypographyProps={{ fontSize: 12, fontWeight: 'bold' }} primary="Logout" />
+                    </ListItemButton>
+                </ListItemSatu>
             </List>
         </Box>
     );
