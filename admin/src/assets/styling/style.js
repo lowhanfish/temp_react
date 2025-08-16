@@ -16,10 +16,10 @@ const ListItemSatu = styled(ListItem)(({ theme }) => ({
 
 const stylex = {
   sideBarText1 : {
-    // fontSize: 11,
-    // fontWeight: "bold",
-    // color: "blue",
-    // marginLeft : -3,
+    fontSize: 11,
+    fontWeight: "bold",
+    color: "blue",
+    marginLeft : -3,
   },
   sideBarText2 : {
     // fontSize: 11,
