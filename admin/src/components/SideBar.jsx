@@ -3,13 +3,14 @@ import {
     Box,
     Drawer,
     List,
-    ListItem,
     ListItemButton,
     ListItemIcon,
     ListItemText,
     Toolbar,
     Collapse,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -32,18 +33,28 @@ export default function SideBar({ variant, open, onClose }) {
         <Box sx={{ overflow: "auto" }}>
             <Toolbar />
             <List>
-                {/* Menu Biasa */}
+                {/* Dashboard */}
                 <ListItemSatu disablePadding>
-                    <ListItemButton>
+                    <ListItemButton component={Link} to="/">
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Inbox" />
+                        <ListItemText primary="Dashboard" />
+                    </ListItemButton>
+                </ListItemSatu>
+
+                {/* Profile */}
+                <ListItemSatu disablePadding>
+                    <ListItemButton component={Link} to="/profile">
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Profile" />
                     </ListItemButton>
                 </ListItemSatu>
 
                 {/* Menu dengan sub-menu */}
-                <ListItemSatu className="sidebar-item">
+                <ListItemSatu>
                     <ListItemButton onClick={handleMenuClick}>
                         <ListItemIcon>
                             <MailIcon />
@@ -81,16 +92,19 @@ export default function SideBar({ variant, open, onClose }) {
                                 </ListItemButton>
                             </List>
                         </Collapse>
-
                     </List>
                 </Collapse>
 
-                <ListItemSatu>
-                    <ListItemButton>
+                {/* Logout */}
+                <ListItemSatu disablePadding>
+                    <ListItemButton component={Link} to="/login">
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
-                        <ListItemText primaryTypographyProps={{ fontSize: 12, fontWeight: 'bold' }} primary="Logout" />
+                        <ListItemText
+                            primaryTypographyProps={{ fontSize: 12, fontWeight: "bold" }}
+                            primary="Logout"
+                        />
                     </ListItemButton>
                 </ListItemSatu>
             </List>
