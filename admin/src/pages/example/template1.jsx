@@ -9,8 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 // import AddIcon from '@mui/icons-material/Add';
 
-import { AccessAlarm, ThreeDRotation, Add } from '@mui/icons-material';
-
+import { AccessAlarm, ThreeDRotation, Add, Settings } from '@mui/icons-material';
 
 import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
 
@@ -120,10 +119,10 @@ const Template1 = () => {
                                         <td>
                                             <div className='settingContainer'>
                                                 <button
-                                                    className="btn rad danger sm"
+                                                    className="btn rad warning sm"
                                                     onClick={(e) => handleClick(e, index)}
                                                 >
-                                                    <AccessAlarm sx={{ fontSize: 14 }} />
+                                                    <Settings sx={{ fontSize: 14 }} />
                                                 </button>
 
                                                 <Menu
@@ -143,7 +142,7 @@ const Template1 = () => {
                                                 </Menu>
                                             </div>
                                         </td>
-                                        <td>{index + 1}</td>
+                                        <td className='center'>{index + 1}</td>
                                         <td>Galang Aditya</td>
                                         <td>galang@example.com</td>
                                         <td>Jakarta</td>

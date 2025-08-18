@@ -1,17 +1,21 @@
 // src/config/menuConfig.js
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import SettingsIcon from '@mui/icons-material/Settings';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const menuConfig = [
   {
     title: "Dashboard",
-    icon: InboxIcon,
+    icon: DashboardIcon,
     path: "/",
   },
   {
     title: "Profile",
-    icon: InboxIcon,
+    icon: PeopleAltIcon,
     path: "/profile",
   },
   {
@@ -32,7 +36,7 @@ const menuConfig = [
   },
   {
     title: "Master Data",
-    icon: MailIcon,
+    icon: SettingsIcon,
     children: [
       {
         title: "User Management",
@@ -68,7 +72,7 @@ const menuConfig = [
   },
   {
     title: "Logout",
-    icon: InboxIcon,
+    icon: LogoutIcon,
     path: "/login",
   },
 ];
