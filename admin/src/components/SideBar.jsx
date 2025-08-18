@@ -14,8 +14,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
 import { ListItemSatu, stylex } from "../assets/styling/style.js";
-// import menuConfig from "../config/menuConfig.js";
-import menuConfig from "../configs/menuConfig.js";
+import menuConfig from "../configs/menuConfig";
 
 const drawerWidth = 240;
 

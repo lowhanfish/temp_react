@@ -15,6 +15,22 @@ const menuConfig = [
     path: "/profile",
   },
   {
+    title: "Menu-SubMenu",
+    icon: InboxIcon,
+    children: [
+          {
+            title: "Add User",
+            path: "/Template1",
+            icon: FiberManualRecordIcon,
+          },
+          {
+            title: "User List",
+            path: "/users/list",
+            icon: FiberManualRecordIcon,
+          },
+        ],
+  },
+  {
     title: "Master Data",
     icon: MailIcon,
     children: [

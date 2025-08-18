@@ -52,6 +52,8 @@ export default function MainLayout() {
                 return "Dashboard";
             case "/profile":
                 return "Profile";
+            case "/Template1":
+                return "Template 1";
             case "/settings":
                 return "Settings";
             // tambahkan route lain sesuai kebutuhan
@@ -121,7 +123,7 @@ export default function MainLayout() {
                 component="main"
                 sx={{
                     flexGrow: 1,
-                    p: 3,
+                    p: 2,
                     width: isTabletOrBelow
                         ? "100%"
                         : desktopOpen
