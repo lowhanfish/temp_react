@@ -1,14 +1,10 @@
 import * as React from 'react';
-// import { alpha, styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import InputBase from '@mui/material/InputBase';
-import { stylex, BootstrapInput, Fieldx, Autocompletex } from '../../assets/styling/style';
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+import SearchIcon from "@mui/icons-material/Search";
+import { stylex, BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
 
 
 
@@ -33,7 +29,21 @@ const Template1 = () => {
             <div className="cardxHeader">
                 <Grid container spacing={1}>
                     <Grid size={{ md: 4, xs: 12 }}>
-                        <Fieldx size='small' fullWidth id="outlined-basic" variant="outlined" />
+                        <Fieldx
+                            fullWidth
+                            variant="outlined"
+                            size="small"
+                            placeholder="Cari sesuatu..."
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton edge="end">
+                                            <SearchIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
                     </Grid>
                     <Grid size={{ md: 4, xs: 12 }}>
                         <Fieldx size='small' fullWidth id="outlined-basic" variant="outlined" />
@@ -41,15 +51,12 @@ const Template1 = () => {
                     <Grid size={{ md: 4, xs: 12 }}>
                         <Autocompletex
                             value={value}
-                            onChange={(event, newValue) => {
-                                setValue(newValue);
-                            }}
+                            onChange={(event, newValue) => setValue(newValue)}
                             inputValue={inputValue}
-                            onInputChange={(event, newInputValue) => {
-                                setInputValue(newInputValue);
-                            }}
+                            onInputChange={(event, newInputValue) => setInputValue(newInputValue)}
                             size="small"
                             options={top100Films}
+                            PopperComponent={Popperx}
                             renderInput={(params) => <TextField {...params} />}
                         />
 

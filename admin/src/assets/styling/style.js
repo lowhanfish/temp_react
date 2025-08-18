@@ -3,6 +3,7 @@ import ListItem from "@mui/material/ListItem";
 import InputBase from "@mui/material/InputBase";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import Popper from "@mui/material/Popper";
 
 // Custom ListItem untuk sidebar
 const ListItemSatu = styled(ListItem)(({ theme }) => ({
@@ -66,16 +67,24 @@ const Fieldx = styled(TextField)(({theme})=>({
     padding: "8px 10px" // padding dalam input
   }
 }));
-const Autocompletex = styled(Autocomplete)(({theme})=>({
-  width: '100%',
-    background: 'white',
-    borderRadius: 4,
-    "& .MuiInputBase-input": {
-      fontSize: "13px",   // ukuran teks input
-      padding: "6px 8px"  // padding biar lebih rapat
-    }
+
+
+const Autocompletex = styled(Autocomplete)(() => ({
+  width: "100%",
+  background: "white",
+  borderRadius: 4,
+  "& .MuiInputBase-input": {
+    fontSize: 13,
+    padding: "6px 8px"
+  }
 }));
 
+const Popperx = styled(Popper)(() => ({
+  "& .MuiAutocomplete-option": {
+    fontSize: 13,
+    padding: "4px 8px"
+  }
+}));
 
 const stylex = {
   sideBarText1 : {
@@ -98,4 +107,4 @@ const stylex = {
   },
 }
 
-export { ListItemSatu, BootstrapInput, Fieldx, Autocompletex, stylex };
+export { ListItemSatu, BootstrapInput, Fieldx, Autocompletex, Popperx, stylex };
