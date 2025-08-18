@@ -5,5 +5,36 @@
 }
 
 .h_body {
-    font-size: 13px;
+    font-size: 12px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+    /* kecil juga biar selaras */
+    line-height: 1.2;
+}
+
+.badge.ok {
+    background: #d1fae5;
+    /* hijau muda */
+    color: #065f46;
+    /* hijau tua */
+}
+
+.badge.warn {
+    background: #fff7d6;
+    /* kuning muda */
+    color: #92400e;
+    /* coklat tua */
+}
+
+.badge.danger {
+    background: #fee2e2;
+    /* merah muda */
+    color: #991b1b;
+    /* merah tua */
 }
