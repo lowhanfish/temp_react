@@ -9,8 +9,16 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 // import AddIcon from '@mui/icons-material/Add';
 
-import { AccessAlarm, ThreeDRotation, Add, Settings } from '@mui/icons-material';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
+
+import { AccessAlarm, ThreeDRotation, Add, Settings } from '@mui/icons-material';
 import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
 
 
@@ -18,7 +26,7 @@ import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/sty
 const Template1 = () => {
 
 
-
+    // ====== AUTO COMPLETE ====== 
     const top100Films = [
         { id: 1, label: 'The Shawshank Redemption', year: 1994 },
         { id: 2, label: 'The Godfather', year: 1972 },
@@ -30,8 +38,9 @@ const Template1 = () => {
 
     const [value, setValue] = React.useState(top100Films[0]);
     const [inputValue, setInputValue] = React.useState('');
+    // ====== AUTO COMPLETE ====== 
 
-
+    // ====== ANCHOR ====== 
     const [anchorEls, setAnchorEls] = React.useState({}); // key = index
 
     const handleClick = (event, index) => {
@@ -41,6 +50,24 @@ const Template1 = () => {
     const handleClose = (index) => {
         setAnchorEls(prev => ({ ...prev, [index]: null }));
     };
+    // ====== ANCHOR ====== 
+
+
+
+    // ====== MODAL ====== 
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
+    const [fullScreen, setFullScreen] = React.useState(true);
+    const [maxWidth, setMaxWidth] = React.useState('sm');
+
+    const handleClickOpenModal = () => {
+        setOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setOpen(false);
+    };
+    // ====== MODAL ====== 
 
     return (
         <div className="cardx">
@@ -77,11 +104,6 @@ const Template1 = () => {
                             PopperComponent={Popperx}
                             renderInput={(params) => <TextField {...params} />}
                         />
-
-                        {/* <div>{`value: ${value !== null ? `'${value.id}'` : 'null'}`}</div>
-                        <div>{`inputValue: '${inputValue}'`}</div>
-                        <br /> */}
-
                     </Grid>
                 </Grid>
             </div>
@@ -90,7 +112,7 @@ const Template1 = () => {
 
                 {/* <Button className='btnAdd' variant="contained" size="small">Small</Button> */}
                 <div className='btnContainer'>
-                    <button className='btn sm primary shaddow1 width150'>
+                    <button onClick={handleClickOpenModal} className='btn md primaryDark shaddow1 width150'>
                         <Add sx={{ fontSize: 18 }} />
                         Add Data
                     </button>
@@ -111,15 +133,13 @@ const Template1 = () => {
                             </tr>
                         </thead>
                         <tbody className="h_body">
-
-
                             {
                                 [...Array(10)].map((_, index) => (
                                     <tr>
                                         <td>
                                             <div className='settingContainer'>
                                                 <button
-                                                    className="btn rad warning sm"
+                                                    className="btn rad primaryDark sm"
                                                     onClick={(e) => handleClick(e, index)}
                                                 >
                                                     <Settings sx={{ fontSize: 14 }} />
@@ -148,7 +168,6 @@ const Template1 = () => {
                                         <td>Jakarta</td>
                                         <td><span className="badge warn">Menunggu</span></td>
                                     </tr>
-
                                 ))
 
                             }
@@ -156,6 +175,34 @@ const Template1 = () => {
                         </tbody>
                     </table>
                 </div>
+
+
+
+                <Dialog
+                    fullWidth={fullScreen}
+                    maxWidth={maxWidth}
+                    open={open}
+                    onClose={handleCloseModal}
+                    aria-labelledby="responsive-dialog-title"
+                >
+                    <DialogTitle id="responsive-dialog-title">
+                        {"Use Google's location service?"}
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Let Google help apps determine location. This means sending anonymous
+                            location data to Google, even when no apps are running.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button autoFocus onClick={handleCloseModal}>
+                            Disagree
+                        </Button>
+                        <Button onClick={handleCloseModal} autoFocus>
+                            Agree
+                        </Button>
+                    </DialogActions>
+                </Dialog>
 
 
 

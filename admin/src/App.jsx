@@ -5,8 +5,11 @@ import AuthLayout from "./layouts/AuthLayout";
 import Dashboard from "./pages/dashboard.jsx";
 import Profile from "./pages/profile.jsx";
 import Template1 from "./pages/example/template1.jsx";
+import Template2 from "./pages/example/template2.jsx";
+import Documentation from "./pages/example/documentation.jsx";
 
 import Login from "./auth/login.jsx";
+import Registration from "./auth/registration.jsx";
 
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/Template1" element={<Template1 />} />
+          <Route path="/Template2" element={<Template2 />} />
+          <Route path="/Documentation" element={<Documentation />} />
+          <Route path="/Registration" element={<Registration />} />
         </Route>
       </Routes>
     </Router>

@@ -24,12 +24,12 @@ const menuConfig = [
     children: [
           {
             title: "Add User",
-            path: "/Template1",
+            path: "/Registration",
             icon: FiberManualRecordIcon,
           },
           {
             title: "User List",
-            path: "/users/list",
+            path: "/",
             icon: FiberManualRecordIcon,
           },
         ],
@@ -43,12 +43,12 @@ const menuConfig = [
         children: [
           {
             title: "Add User",
-            path: "/users/add",
+            path: "/Registration",
             icon: FiberManualRecordIcon,
           },
           {
             title: "User List",
-            path: "/users/list",
+            path: "/",
             icon: FiberManualRecordIcon,
           },
         ],
@@ -58,12 +58,17 @@ const menuConfig = [
         children: [
           {
             title: "Template 1",
-            path: "/template1",
+            path: "/Template1",
             icon: FiberManualRecordIcon,
           },
           {
             title: "Template 2",
-            path: "/template/2",
+            path: "/Template2",
+            icon: FiberManualRecordIcon,
+          },
+          {
+            title: "Documentation",
+            path: "/Documentation",
             icon: FiberManualRecordIcon,
           },
         ],

@@ -81,7 +81,8 @@ export default function SideBar({ variant, open, onClose }) {
             <Box sx={{ width: "100%" }}>
                 <img
                     src="https://img.freepik.com/premium-vector/white-elegant-blue-background_662550-436.jpg"
-                    alt="Logo"
+                    // src="https://simpegv2.konaweselatankab.go.id/images/banner.png"
+                    alt="No image"
                     style={{
                         width: "100%",
                         height: "auto",

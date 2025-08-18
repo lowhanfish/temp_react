@@ -82,6 +82,7 @@ export default function MainLayout() {
                         easing: theme.transitions.easing.sharp,
                         duration: theme.transitions.duration.leavingScreen,
                     }),
+                    background: '#6aaeff',
                 }}
             >
                 <Toolbar>
@@ -103,20 +104,22 @@ export default function MainLayout() {
             </AppBar>
 
             {/* Sidebar */}
-            {isTabletOrBelow ? (
-                <SideBar
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{ keepMounted: true }}
-                />
-            ) : (
-                <SideBar
-                    variant="persistent"
-                    open={desktopOpen}
-                    onClose={handleDrawerToggle}
-                />
-            )}
+            {
+                isTabletOrBelow ? (
+                    <SideBar
+                        variant="temporary"
+                        open={mobileOpen}
+                        onClose={handleDrawerToggle}
+                        ModalProps={{ keepMounted: true }}
+                    />
+                ) : (
+                    <SideBar
+                        variant="persistent"
+                        open={desktopOpen}
+                        onClose={handleDrawerToggle}
+                    />
+                )
+            }
 
             {/* Konten */}
             <Box
@@ -139,6 +142,6 @@ export default function MainLayout() {
                 <Toolbar />
                 <Outlet />
             </Box>
-        </Box>
+        </Box >
     );
 }
