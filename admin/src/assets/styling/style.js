@@ -19,7 +19,7 @@ const stylex = {
     fontSize: 13,
     fontWeight: "bold",
     color: "#3B3B3B",
-    marginLeft : -3,
+    // marginLeft : -3,
   },
   sideBarText2 : {
     fontSize: 12,
@@ -31,7 +31,7 @@ const stylex = {
     fontSize: 12,
     fontWeight: "bold",
     color: "#525252",
-    marginLeft : -5,
+    marginLeft : -1,
   },
 }
 
