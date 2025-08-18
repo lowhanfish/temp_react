@@ -54,6 +54,12 @@ export default function MainLayout() {
                 return "Profile";
             case "/Template1":
                 return "Template 1";
+            case "/Template2":
+                return "Template 2";
+            case "/Documentation":
+                return "Documentation";
+            case "/Registration":
+                return "Add User";
             case "/settings":
                 return "Settings";
             // tambahkan route lain sesuai kebutuhan
