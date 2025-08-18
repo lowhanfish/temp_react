@@ -12,6 +12,9 @@
     /* background-color: #1576d1; */
     /* warna dasar button */
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* supaya overlay nggak keluar */
 }
 
@@ -65,4 +68,23 @@
 
 .btn.lg {
     height: 45px;
+}
+
+.btn.rad {
+    border-radius: 50%;
+}
+
+.btn.sm.rad {
+    width: 20px;
+    border-radius: 50%;
+}
+
+.btn.md.rad {
+    width: 33px;
+    border-radius: 50%;
+}
+
+.btn.lg.rad {
+    width: 45px;
+    border-radius: 50%;
 }

@@ -3,8 +3,15 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+// import AddIcon from '@mui/icons-material/Add';
+
+import { AccessAlarm, ThreeDRotation, Add } from '@mui/icons-material';
+
+
 import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
 
 
@@ -24,6 +31,17 @@ const Template1 = () => {
 
     const [value, setValue] = React.useState(top100Films[0]);
     const [inputValue, setInputValue] = React.useState('');
+
+
+    const [anchorEls, setAnchorEls] = React.useState({}); // key = index
+
+    const handleClick = (event, index) => {
+        setAnchorEls(prev => ({ ...prev, [index]: event.currentTarget }));
+    };
+
+    const handleClose = (index) => {
+        setAnchorEls(prev => ({ ...prev, [index]: null }));
+    };
 
     return (
         <div className="cardx">
@@ -73,52 +91,69 @@ const Template1 = () => {
 
                 {/* <Button className='btnAdd' variant="contained" size="small">Small</Button> */}
                 <div className='btnContainer'>
-                    <button className='btn sm primary shaddow1 width150'>Add Data</button>
+                    <button className='btn sm primary shaddow1 width150'>
+                        <Add sx={{ fontSize: 18 }} />
+                        Add Data
+                    </button>
                     {/* <button className='btn danger shaddow1'>Add Data</button> <br /> <br />
                     <button className='btn lg warning fullWidth shaddow2'>Add Data</button> */}
                 </div>
 
                 <div className="table-wrap" tabIndex="0">
-                    <table className="tabelku">
+                    <table className="tabelku" style={{ width: '100%' }}>
                         <thead className="h_thead">
                             <tr>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Kota</th>
-                                <th scope="col">Status</th>
+                                <th style={{ width: '5%' }} scope="col">set</th>
+                                <th style={{ width: '5%' }} scope="col">No</th>
+                                <th style={{ width: '30%' }} scope="col">Nama</th>
+                                <th style={{ width: '20%' }} scope="col">Email</th>
+                                <th style={{ width: '20%' }} scope="col">Kota</th>
+                                <th style={{ width: '20%' }} scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody className="h_body">
-                            <tr>
-                                <td>Rina Saputri</td>
-                                <td>rina@example.com</td>
-                                <td>Bandung</td>
-                                <td><span className="badge ok">Aktif</span></td>
-                            </tr>
-                            <tr>
-                                <td>Galang Aditya</td>
-                                <td>galang@example.com</td>
-                                <td>Jakarta</td>
-                                <td><span className="badge warn">Menunggu</span></td>
-                            </tr>
-                            <tr>
-                                <td>Devi Maharani</td>
-                                <td>devi@example.com</td>
-                                <td>Makassar</td>
-                                <td><span className="badge ok">Aktif</span></td>
-                            </tr>
-                            <tr>
-                                <td>Rafi Pratama</td>
-                                <td>rafi@example.com</td>
-                                <td>Yogyakarta</td>
-                                <td><span className="badge ok">Aktif</span></td>
-                            </tr>
-                            <tr>
-                                <td>Nadia Lestari</td>
-                                <td>nadia@example.com</td>
-                                <td>Surabaya</td>
-                                <td><span className="badge warn">Menunggu</span></td>
-                            </tr>
+
+
+                            {
+                                [...Array(10)].map((_, index) => (
+                                    <tr>
+                                        <td>
+                                            <div className='settingContainer'>
+                                                <button
+                                                    className="btn rad danger sm"
+                                                    onClick={(e) => handleClick(e, index)}
+                                                >
+                                                    <AccessAlarm sx={{ fontSize: 14 }} />
+                                                </button>
+
+                                                <Menu
+                                                    id={`menu-${index}`}
+                                                    anchorEl={anchorEls[index]}
+                                                    open={Boolean(anchorEls[index])}
+                                                    onClose={() => handleClose(index)}
+                                                    slotProps={{
+                                                        list: {
+                                                            'aria-labelledby': `basic-button-${index}`,
+                                                        },
+                                                    }}
+                                                >
+                                                    <MenuItem sx={{ fontSize: 12 }} onClick={() => handleClose(index)}>Detail</MenuItem>
+                                                    <MenuItem sx={{ fontSize: 12 }} onClick={() => handleClose(index)}>Edit</MenuItem>
+                                                    <MenuItem sx={{ fontSize: 12 }} onClick={() => handleClose(index)}>Delete</MenuItem>
+                                                </Menu>
+                                            </div>
+                                        </td>
+                                        <td>{index + 1}</td>
+                                        <td>Galang Aditya</td>
+                                        <td>galang@example.com</td>
+                                        <td>Jakarta</td>
+                                        <td><span className="badge warn">Menunggu</span></td>
+                                    </tr>
+
+                                ))
+
+                            }
+
                         </tbody>
                     </table>
                 </div>
