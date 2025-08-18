@@ -2,9 +2,10 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import InputAdornment from "@mui/material/InputAdornment";
+import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import { stylex, BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
+import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
 
 
 
@@ -70,7 +71,12 @@ const Template1 = () => {
             <div className="cardxBody">
 
 
-
+                {/* <Button className='btnAdd' variant="contained" size="small">Small</Button> */}
+                <div className='btnContainer'>
+                    <button className='btn sm primary shaddow1 width150'>Add Data</button>
+                    {/* <button className='btn danger shaddow1'>Add Data</button> <br /> <br />
+                    <button className='btn lg warning fullWidth shaddow2'>Add Data</button> */}
+                </div>
 
                 <div className="table-wrap" tabIndex="0">
                     <table className="tabelku">

@@ -13,8 +13,9 @@ import { Link } from "react-router-dom";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
-import { ListItemSatu, stylex } from "../assets/styling/style.js";
+import { ListItemSatu } from "../assets/styling/style.js";
 import menuConfig from "../configs/menuConfig";
+import stylex from "../assets/styling/stylex.js";
 
 const drawerWidth = 240;
 
