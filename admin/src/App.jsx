@@ -4,6 +4,7 @@ import AuthLayout from "./layouts/AuthLayout";
 // import Login from "./auth/Login.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import Profile from "./pages/profile.jsx";
+import Template1 from "./pages/example/template1.jsx";
 
 import Login from "./auth/login.jsx";
 
@@ -21,6 +22,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/Template1" element={<Template1 />} />
         </Route>
       </Routes>
     </Router>
