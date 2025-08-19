@@ -149,8 +149,15 @@ const Template1 = () => {
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldWithButton Title={'FieldWithButton'} />
-                            <FieldAutocomplete Title={'FieldAutocomplete'} />
-                            <FieldDatex Title={'FieldAutocomplete'} />
+
+                            <Grid container spacing={1}>
+                                <Grid size={{ md: 6, xs: 12 }}>
+                                    <FieldAutocomplete Title={'FieldAutocomplete'} />
+                                </Grid>
+                                <Grid size={{ md: 6, xs: 12 }}>
+                                    <FieldDatex Title={'FieldDatex'} />
+                                </Grid>
+                            </Grid>
 
 
 
