@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -18,6 +17,7 @@ import { Clear, Add, Settings } from '@mui/icons-material';
 import FieldSingle from '../../components/items/FieldSingle';
 import FieldWithButton from '../../components/items/FieldWithButton';
 import FieldAutocomplete from '../../components/items/FieldAutocomplete';
+import Anchorx from '../../components/items/Anchorx';
 
 
 
@@ -108,30 +108,7 @@ const Template1 = () => {
                                 [...Array(10)].map((_, index) => (
                                     <tr key={index}>
                                         <td>
-                                            <div className='settingContainer'>
-                                                <button
-                                                    className="btn rad primarySoft sm"
-                                                    onClick={(e) => handleClick(e, index)}
-                                                >
-                                                    <Settings sx={{ fontSize: 14 }} />
-                                                </button>
-
-                                                <Menu
-                                                    id={`menu-${index}`}
-                                                    anchorEl={anchorEls[index]}
-                                                    open={Boolean(anchorEls[index])}
-                                                    onClose={() => handleClose(index)}
-                                                    slotProps={{
-                                                        list: {
-                                                            'aria-labelledby': `basic-button-${index}`,
-                                                        },
-                                                    }}
-                                                >
-                                                    <MenuItem sx={{ fontSize: 12 }} onClick={() => handleClose(index)}>Detail</MenuItem>
-                                                    <MenuItem sx={{ fontSize: 12 }} onClick={() => handleClose(index)}>Edit</MenuItem>
-                                                    <MenuItem sx={{ fontSize: 12 }} onClick={() => handleClose(index)}>Delete</MenuItem>
-                                                </Menu>
-                                            </div>
+                                            <Anchorx index={index} />
                                         </td>
                                         <td className='center'>{index + 1}</td>
                                         <td>Galang Aditya</td>
