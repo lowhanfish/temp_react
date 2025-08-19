@@ -15,9 +15,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Pagination from '@mui/material/Pagination';
 
 import { Clear, Add, Settings } from '@mui/icons-material';
-import { Autocompletex, Popperx } from '../../assets/styling/style';
 import FieldSingle from '../../components/items/FieldSingle';
 import FieldWithButton from '../../components/items/FieldWithButton';
+import FieldAutocomplete from '../../components/items/FieldAutocomplete';
+
 
 
 
@@ -28,19 +29,7 @@ import FieldWithButton from '../../components/items/FieldWithButton';
 const Template1 = () => {
 
 
-    // ====== AUTO COMPLETE ====== 
-    const top100Films = [
-        { id: 1, label: 'The Shawshank Redemption', year: 1994 },
-        { id: 2, label: 'The Godfather', year: 1972 },
-        { id: 3, label: 'The Godfather: Part II', year: 1974 },
-        { id: 4, label: 'The Dark Knight', year: 2008 },
-        { id: 5, label: '12 Angry Men', year: 1957 },
-        { id: 6, label: "Schindler's List", year: 1993 },
-    ];
 
-    const [value, setValue] = React.useState(top100Films[0]);
-    const [inputValue, setInputValue] = React.useState('');
-    // ====== AUTO COMPLETE ====== 
 
     // ====== ANCHOR ====== 
     const [anchorEls, setAnchorEls] = React.useState({}); // key = index
@@ -82,16 +71,10 @@ const Template1 = () => {
                         <FieldSingle />
                     </Grid>
                     <Grid size={{ md: 4, xs: 12 }}>
-                        <Autocompletex
-                            value={value}
-                            onChange={(event, newValue) => setValue(newValue)}
-                            inputValue={inputValue}
-                            onInputChange={(event, newInputValue) => setInputValue(newInputValue)}
-                            size="small"
-                            options={top100Films}
-                            PopperComponent={Popperx}
-                            renderInput={(params) => <TextField {...params} />}
-                        />
+
+                        <FieldAutocomplete />
+
+
                     </Grid>
                 </Grid>
             </div>
@@ -194,6 +177,7 @@ const Template1 = () => {
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldWithButton Title={'FieldWithButton'} />
+                            <FieldAutocomplete Title={'FieldAutocomplete'} />
 
                         </DialogContentText>
                     </DialogContent>
