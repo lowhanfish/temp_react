@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 // import AddIcon from '@mui/icons-material/Add';
 
@@ -13,7 +11,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Pagination from '@mui/material/Pagination';
 
-import { Clear, Add, Settings } from '@mui/icons-material';
+import { Clear, Add } from '@mui/icons-material';
 import FieldSingle from '../../components/items/FieldSingle';
 import FieldWithButton from '../../components/items/FieldWithButton';
 import FieldAutocomplete from '../../components/items/FieldAutocomplete';
@@ -22,7 +20,10 @@ import Anchorx from '../../components/items/Anchorx';
 
 
 
-
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 
@@ -155,6 +156,16 @@ const Template1 = () => {
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldWithButton Title={'FieldWithButton'} />
                             <FieldAutocomplete Title={'FieldAutocomplete'} />
+
+
+
+                            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                <DemoContainer components={['DatePicker']}>
+                                    <DatePicker label="Basic date picker" />
+                                </DemoContainer>
+                            </LocalizationProvider> */}
+
+
 
                         </DialogContentText>
                     </DialogContent>
