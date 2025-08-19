@@ -57,3 +57,14 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+.headerModalLeft {
+    display: flex;
+    flex: 1;
+}
+
+.headerModalRight {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+}

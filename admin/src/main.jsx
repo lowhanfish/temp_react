@@ -5,6 +5,8 @@ import './assets/css/table.css'
 import './assets/css/fonts.css'
 import './assets/css/color.css'
 import './assets/css/button.css'
+import './assets/css/modal.css'
+import './assets/css/input.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

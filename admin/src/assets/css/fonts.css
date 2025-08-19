@@ -45,3 +45,9 @@
 .shaddowText {
     text-shadow: 1px 1px 1px #00000077;
 }
+
+
+
+.inputText {
+    font-size: 10px;
+}

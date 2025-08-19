@@ -19,8 +19,14 @@ import Pagination from '@mui/material/Pagination';
 import { useTheme } from '@mui/material/styles';
 
 
-import { AccessAlarm, ThreeDRotation, Add, Settings } from '@mui/icons-material';
+import { Clear, ThreeDRotation, Add, Settings } from '@mui/icons-material';
 import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
+import FieldSingle from '../../components/items/FieldSingle';
+import FieldSingleTitle from '../../components/items/FieldSingleTitle';
+
+
+
+
 
 
 
@@ -55,20 +61,20 @@ const Template1 = () => {
 
 
 
-    // ====== MODAL ====== 
-    const [open, setOpen] = React.useState(false);
-    const theme = useTheme();
+    // ====== MODAL ADD ====== 
+    const [openModalAdd, setOpenModal] = React.useState(false);
+    // const theme = useTheme();
     const [fullScreen, setFullScreen] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
 
-    const handleClickOpenModal = () => {
-        setOpen(true);
+    const handleClickopenModalAdd = () => {
+        setOpenModal(true);
     };
 
-    const handleCloseModal = () => {
-        setOpen(false);
+    const handleCloseModalAdd = () => {
+        setOpenModal(false);
     };
-    // ====== MODAL ====== 
+    // ====== MODAL ADD ====== 
 
     return (
         <div className="cardx">
@@ -92,7 +98,7 @@ const Template1 = () => {
                         />
                     </Grid>
                     <Grid size={{ md: 4, xs: 12 }}>
-                        <Fieldx size='small' fullWidth id="outlined-basic" variant="outlined" />
+                        <FieldSingle />
                     </Grid>
                     <Grid size={{ md: 4, xs: 12 }}>
                         <Autocompletex
@@ -113,7 +119,7 @@ const Template1 = () => {
 
                 {/* <Button className='btnAdd' variant="contained" size="small">Small</Button> */}
                 <div className='btnContainer'>
-                    <button onClick={handleClickOpenModal} className='btn md primarySoft shaddow1 width150'>
+                    <button onClick={handleClickopenModalAdd} className='btn md primarySoft shaddow1 width150'>
                         <Add sx={{ fontSize: 18 }} />
                         Add Data
                     </button>
@@ -136,7 +142,7 @@ const Template1 = () => {
                         <tbody className="h_body">
                             {
                                 [...Array(10)].map((_, index) => (
-                                    <tr>
+                                    <tr key={index}>
                                         <td>
                                             <div className='settingContainer'>
                                                 <button
@@ -186,24 +192,34 @@ const Template1 = () => {
                 <Dialog
                     fullWidth={fullScreen}
                     maxWidth={maxWidth}
-                    open={open}
-                    onClose={handleCloseModal}
+                    open={openModalAdd}
+                    onClose={handleCloseModalAdd}
                     aria-labelledby="responsive-dialog-title"
                 >
                     <DialogTitle id="responsive-dialog-title">
-                        {"Use Google's location service?"}
+                        <div className='headerModal'>
+                            <div className='headerModalLeft'>Add Data</div>
+                            <div className='headerModalRight'>
+                                <IconButton onClick={handleCloseModalAdd} aria-label="fingerprint">
+                                    <Clear />
+                                </IconButton>
+                            </div>
+                        </div>
                     </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                            Let Google help apps determine location. This means sending anonymous
-                            location data to Google, even when no apps are running.
+
+                            <FieldSingleTitle Title={'Single Input - object data'} />
+                            <FieldSingleTitle Title={'Single Input - object data'} />
+                            <FieldSingleTitle Title={'Single Input - object data'} />
+
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button autoFocus onClick={handleCloseModal}>
+                        <Button autoFocus onClick={handleCloseModalAdd}>
                             Disagree
                         </Button>
-                        <Button onClick={handleCloseModal} autoFocus>
+                        <Button onClick={handleCloseModalAdd} autoFocus>
                             Agree
                         </Button>
                     </DialogActions>
