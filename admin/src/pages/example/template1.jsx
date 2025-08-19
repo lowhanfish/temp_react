@@ -16,14 +16,8 @@ import FieldSingle from '../../components/items/FieldSingle';
 import FieldWithButton from '../../components/items/FieldWithButton';
 import FieldAutocomplete from '../../components/items/FieldAutocomplete';
 import Anchorx from '../../components/items/Anchorx';
+import FieldDatex from '../../components/items/FieldDatex';
 
-
-
-
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 
 
@@ -149,21 +143,14 @@ const Template1 = () => {
                         </div>
                     </DialogTitle>
                     <DialogContent>
-                        <DialogContentText>
+                        <DialogContentText component="div">
 
-                            <FieldSingle Title={'FieldSingle'} />
+                            <FieldSingle title={'FieldSingle'} />
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldWithButton Title={'FieldWithButton'} />
                             <FieldAutocomplete Title={'FieldAutocomplete'} />
-
-
-
-                            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                <DemoContainer components={['DatePicker']}>
-                                    <DatePicker label="Basic date picker" />
-                                </DemoContainer>
-                            </LocalizationProvider> */}
+                            <FieldDatex Title={'FieldAutocomplete'} />
 
 
 
