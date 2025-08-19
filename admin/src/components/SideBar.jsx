@@ -17,6 +17,8 @@ import { ListItemSatu } from "../assets/styling/style.js";
 import menuConfig from "../configs/menuConfig";
 import stylex from "../assets/styling/stylex.js";
 
+import KopImage from '../assets/img/kop.png';
+
 const drawerWidth = 240;
 
 export default function SideBar({ variant, open, onClose }) {
@@ -80,7 +82,8 @@ export default function SideBar({ variant, open, onClose }) {
             {/* Logo */}
             <Box sx={{ width: "100%" }}>
                 <img
-                    src="https://img.freepik.com/premium-vector/white-elegant-blue-background_662550-436.jpg"
+                    src={KopImage}
+                    // src="https://img.freepik.com/premium-vector/white-elegant-blue-background_662550-436.jpg"
                     // src="https://simpegv2.konaweselatankab.go.id/images/banner.png"
                     alt="No image"
                     style={{

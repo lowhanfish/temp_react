@@ -2,10 +2,13 @@
     font-size: 11px !important;
     font-weight: bold;
     color: white;
+    /* color: #d3d3d3; */
 }
 
 .h_body {
     font-size: 12px;
+    font-weight: 510;
+    color: #636363;
 }
 
 .badge {
@@ -37,4 +40,8 @@
     /* merah muda */
     color: #991b1b;
     /* merah tua */
+}
+
+.shaddowText {
+    text-shadow: 1px 1px 1px #00000077;
 }

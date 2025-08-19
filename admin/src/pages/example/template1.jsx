@@ -15,6 +15,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Pagination from '@mui/material/Pagination';
 import { useTheme } from '@mui/material/styles';
 
 
@@ -112,7 +113,7 @@ const Template1 = () => {
 
                 {/* <Button className='btnAdd' variant="contained" size="small">Small</Button> */}
                 <div className='btnContainer'>
-                    <button onClick={handleClickOpenModal} className='btn md primaryDark shaddow1 width150'>
+                    <button onClick={handleClickOpenModal} className='btn md primarySoft shaddow1 width150'>
                         <Add sx={{ fontSize: 18 }} />
                         Add Data
                     </button>
@@ -121,8 +122,8 @@ const Template1 = () => {
                 </div>
 
                 <div className="table-wrap" tabIndex="0">
-                    <table className="tabelku" style={{ width: '100%' }}>
-                        <thead className="h_thead">
+                    <table className="tabelku shaddow2" style={{ width: '100%' }}>
+                        <thead className="h_thead shaddowText">
                             <tr>
                                 <th style={{ width: '5%' }} scope="col">set</th>
                                 <th style={{ width: '5%' }} scope="col">No</th>
@@ -139,7 +140,7 @@ const Template1 = () => {
                                         <td>
                                             <div className='settingContainer'>
                                                 <button
-                                                    className="btn rad primaryDark sm"
+                                                    className="btn rad primarySoft sm"
                                                     onClick={(e) => handleClick(e, index)}
                                                 >
                                                     <Settings sx={{ fontSize: 14 }} />
@@ -174,6 +175,10 @@ const Template1 = () => {
 
                         </tbody>
                     </table>
+                </div>
+
+                <div className='paginContainer'>
+                    <Pagination count={10} color="primary" variant="outlined" />
                 </div>
 
 

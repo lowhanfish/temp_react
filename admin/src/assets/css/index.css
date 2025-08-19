@@ -49,3 +49,11 @@
     /* align-items: center; */
     text-align: center !important;
 }
+
+.paginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
