@@ -1,20 +1,20 @@
 const stylex = {
   sideBarText1 : {
     fontSize: 13,
-    fontWeight: "bold",
-    color: "#3B3B3B",
+    fontWeight: 550,
+    color: "#676767",
     // marginLeft : -3,
   },
   sideBarText2 : {
     fontSize: 12,
-    fontWeight: "bold",
-    color: "#4A4A4A",
+    fontWeight: 550,
+    color: "#7b7b7b",
     marginLeft : 2,
   },
   sideBarText3 : {
     fontSize: 12,
-    fontWeight: "bold",
-    color: "#525252",
+    fontWeight: 550,
+    color: "#8d8d8d",
     marginLeft : -1,
   },
 }

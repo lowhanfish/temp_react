@@ -145,7 +145,7 @@ const Template1 = () => {
                     <DialogContent>
                         <DialogContentText component="div">
 
-                            <FieldSingle title={'FieldSingle'} />
+                            <FieldSingle Title={'FieldSingle'} />
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldSingle Title={'FieldSingle'} />
                             <FieldWithButton Title={'FieldWithButton'} />
@@ -165,10 +165,10 @@ const Template1 = () => {
                     </DialogContent>
                     <DialogActions>
                         <Button autoFocus onClick={handleCloseModalAdd}>
-                            Disagree
+                            Cancel
                         </Button>
                         <Button onClick={handleCloseModalAdd} autoFocus>
-                            Agree
+                            Save
                         </Button>
                     </DialogActions>
                 </Dialog>
