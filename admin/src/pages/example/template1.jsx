@@ -1,12 +1,10 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 // import AddIcon from '@mui/icons-material/Add';
 
 import Dialog from '@mui/material/Dialog';
@@ -14,15 +12,12 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Pagination from '@mui/material/Pagination';
-import { useTheme } from '@mui/material/styles';
 
-
-import { Clear, ThreeDRotation, Add, Settings } from '@mui/icons-material';
-import { BootstrapInput, Fieldx, Autocompletex, Popperx } from '../../assets/styling/style';
+import { Clear, Add, Settings } from '@mui/icons-material';
+import { Autocompletex, Popperx } from '../../assets/styling/style';
 import FieldSingle from '../../components/items/FieldSingle';
-import FieldSingleTitle from '../../components/items/FieldSingleTitle';
+import FieldWithButton from '../../components/items/FieldWithButton';
 
 
 
@@ -81,21 +76,7 @@ const Template1 = () => {
             <div className="cardxHeader">
                 <Grid container spacing={1}>
                     <Grid size={{ md: 4, xs: 12 }}>
-                        <Fieldx
-                            fullWidth
-                            variant="outlined"
-                            size="small"
-                            placeholder="Cari sesuatu..."
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        <IconButton edge="end">
-                                            <SearchIcon />
-                                        </IconButton>
-                                    </InputAdornment>
-                                )
-                            }}
-                        />
+                        <FieldWithButton placeholderx={'Cari Data..'} />
                     </Grid>
                     <Grid size={{ md: 4, xs: 12 }}>
                         <FieldSingle />
@@ -209,9 +190,10 @@ const Template1 = () => {
                     <DialogContent>
                         <DialogContentText>
 
-                            <FieldSingleTitle Title={'Single Input - object data'} />
-                            <FieldSingleTitle Title={'Single Input - object data'} />
-                            <FieldSingleTitle Title={'Single Input - object data'} />
+                            <FieldSingle Title={'FieldSingle'} />
+                            <FieldSingle Title={'FieldSingle'} />
+                            <FieldSingle Title={'FieldSingle'} />
+                            <FieldWithButton Title={'FieldWithButton'} />
 
                         </DialogContentText>
                     </DialogContent>
