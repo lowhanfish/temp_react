@@ -17,6 +17,7 @@ import FieldWithButton from '../../components/items/FieldWithButton';
 import FieldAutocomplete from '../../components/items/FieldAutocomplete';
 import Anchorx from '../../components/items/Anchorx';
 import FieldDatex from '../../components/items/FieldDatex';
+import BasicSelect from '../../components/items/BasicSelect';
 
 
 
@@ -158,6 +159,10 @@ const Template1 = () => {
                                     <FieldDatex Title={'FieldDatex'} />
                                 </Grid>
                             </Grid>
+
+
+                            <BasicSelect Title={'BasicSelect'} />
+
 
 
 

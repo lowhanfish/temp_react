@@ -3,6 +3,8 @@ import ListItem from "@mui/material/ListItem";
 import InputBase from "@mui/material/InputBase";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Popper from "@mui/material/Popper";
 
 // Custom ListItem untuk sidebar
@@ -69,6 +71,19 @@ const Fieldx = styled(TextField)(({theme})=>({
 }));
 
 
+const Selectx = styled(Select)(() => ({
+  width: "100%",
+  background: "white",
+  borderRadius: 4,
+  "& .MuiInputBase-input": {
+    fontSize: 13,
+    padding: "6px 8px"
+  }
+}));
+const MenuItemx = styled(MenuItem)(() => ({
+  fontSize: 13,
+}));
+
 const Autocompletex = styled(Autocomplete)(() => ({
   width: "100%",
   background: "white",
@@ -88,4 +103,4 @@ const Popperx = styled(Popper)(() => ({
 
 
 
-export { ListItemSatu, BootstrapInput, Fieldx, Autocompletex, Popperx };
+export { ListItemSatu, BootstrapInput, Fieldx, Autocompletex, Popperx, Selectx, MenuItemx };
