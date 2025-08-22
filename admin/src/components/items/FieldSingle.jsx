@@ -1,5 +1,7 @@
 import React from 'react'
-import { Fieldx } from '../../assets/styling/style'
+import { Fieldx, FieldxKamio } from '../../assets/styling/style'
+import stylex from '../../assets/styling/stylex'
+
 
 function FieldSingle({ Title }) {
     // Periksa apakah properti 'Title' ada (tidak null, undefined, atau string kosong)

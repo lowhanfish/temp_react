@@ -69,6 +69,9 @@ const Fieldx = styled(TextField)(({theme})=>({
     padding: "8px 10px" // padding dalam input
   }
 }));
+const FieldxKamio = styled(TextField)(({theme})=>({
+  backgroundColor :'purple',
+}));
 
 
 const Selectx = styled(Select)(() => ({
@@ -103,4 +106,4 @@ const Popperx = styled(Popper)(() => ({
 
 
 
-export { ListItemSatu, BootstrapInput, Fieldx, Autocompletex, Popperx, Selectx, MenuItemx };
+export { ListItemSatu, BootstrapInput, Fieldx, Autocompletex, Popperx, Selectx, MenuItemx, FieldxKamio };

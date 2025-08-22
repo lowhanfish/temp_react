@@ -49,3 +49,11 @@ router.post('/login', (req, res, next)=>{
 })
 
 
+router.post('/general_register',(req, res)=>{
+    
+
+
+
+})
+
+

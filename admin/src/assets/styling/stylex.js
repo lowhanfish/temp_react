@@ -17,6 +17,9 @@ const stylex = {
     color: "#8d8d8d",
     marginLeft : -1,
   },
+  cocodark : {
+    backgroundColor : 'red'
+  }
 }
 
 export default stylex
