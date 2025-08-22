@@ -45,6 +45,21 @@ router.post('/login', (req, res, next)=>{
 
     res.send(result)
 
+    if (result.error == null || result.error == undefined) {
+        let query = ``
+        db.query(query, (err, row)=>{
+            if (row.length <= 0) {
+                console.log("akun tidak di temukan");
+                respondError422(res, next, 'Akun tidak ditemukan')
+            } else {
+                
+            }
+
+        })
+    } else {
+        
+    }
+
 
 })
 
