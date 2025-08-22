@@ -52,7 +52,10 @@ router.post('/login', (req, res, next)=>{
                 console.log("akun tidak di temukan");
                 respondError422(res, next, 'Akun tidak ditemukan')
             } else {
-                
+                var user = {};
+                row.forEach(user => {
+                    user = user;
+                });
             }
 
         })
