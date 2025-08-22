@@ -56,7 +56,22 @@ router.post('/login', (req, res, next)=>{
                 row.forEach(user => {
                     user = user;
                 });
+
             }
+            const payload =  {
+                    _id: user.id,
+                    username : user.username,
+                    profile : {
+                        username : user.username,
+                        nama : user.nama,
+                        hp : user.hp,
+                        email : user.email,
+                        id_pengguna : user.id_pengguna,
+                    }
+                };
+
+
+                // prepare bcrypt compare
 
         })
     } else {
