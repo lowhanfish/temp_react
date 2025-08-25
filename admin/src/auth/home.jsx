@@ -8,11 +8,9 @@ function Home() {
     return (
         <div className='singlePage'>
             <Grid container spacing={1}>
+
                 <Grid size={{ md: 6, xs: 12 }}>
-                    <div className='singlePageContainer'></div>
-                </Grid>
-                <Grid size={{ md: 6, xs: 12 }}>
-                    <div className='singlePageContainer' style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+                    <div className='singlePageContainer' style={{ paddingLeft: '20%', paddingRight: '10%' }}>
                         <div className='singlePageTextContainer'>
                             <div className='h_Home1'>Welcome to</div>
                             <div className='h_Home5'>Temp-React</div>
@@ -24,6 +22,15 @@ function Home() {
                                 <a className='h_Home4' href="https://github.com/lowhanfish/temp_react">https://github.com/lowhanfish/temp_react</a>
                             </div>
 
+                        </div>
+                    </div>
+                </Grid>
+
+                <Grid size={{ md: 6, xs: 12 }}>
+                    <div className='singlePageContainer'>
+                        <div>
+                            <div>Manual Book</div>
+                            <div>referensi text</div>
                         </div>
                     </div>
                 </Grid>
