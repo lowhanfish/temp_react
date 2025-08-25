@@ -10,6 +10,7 @@ import Documentation from "./pages/example/documentation.jsx";
 
 import Login from "./auth/login.jsx";
 import Registration from "./auth/registration.jsx";
+import Home from "./auth/home.jsx";
 
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
         {/* Auth routes tanpa drawer */}
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
         </Route>
 
         {/* Pages routes dengan drawer */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/Template1" element={<Template1 />} />
           <Route path="/Template2" element={<Template2 />} />

@@ -1,25 +1,42 @@
-//import liraries
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react'
+// import { Grid } from '@mui/material'
+import Grid from '@mui/material/Grid';
 
-// create a component
-const Home = () => {
+
+
+function Home() {
     return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-        </View>
-    );
-};
+        <div className='singlePage'>
+            {/* <Grid container spacing={1}>
+                <Grid size={{ md: 6, sx: 12 }}>
+                    <h1>Test</h1>
+                </Grid>
+                <Grid size={{ md: 6, sx: 12 }}>
+                    <h1>Test</h1>
+                </Grid>
 
-// define your styles
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
-    },
-});
+            </Grid> */}
 
-//make this component available to the app
-export default Home;
+            <Grid container spacing={1}>
+                <Grid size={{ md: 4, xs: 12 }}>
+                    {/* <FieldWithButton placeholderx={'Cari Data..'} /> */}
+                    1
+                </Grid>
+                <Grid size={{ md: 4, xs: 12 }}>
+                    2
+                    {/* <FieldSingle /> */}
+                </Grid>
+                <Grid size={{ md: 4, xs: 12 }}>
+                    3
+
+                    {/* <FieldAutocomplete /> */}
+
+
+                </Grid>
+            </Grid>
+        </div>
+    )
+}
+
+export default Home
+
